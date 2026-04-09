@@ -50,7 +50,15 @@ SoPhuc SoPhuc::Tich(SoPhuc b){
 }
 SoPhuc SoPhuc::Thuong(SoPhuc b){
     SoPhuc kq;
+    // Tính mẫu số chung: c^2 + d^2
     double mau = b.dThuc * b.dThuc + b.dAo * b.dAo;
+    // Kiểm tra mẫu số bằng 0
+    if (mau == 0) {
+        cout << "Loi: Khong the chia cho so phuc 0!\n";
+        kq.dThuc = 0; 
+        kq.dAo = 0;
+        return kq;
+    }
     kq.dThuc = (dThuc * b.dThuc + dAo * b.dAo) / mau;
     kq.dAo = (dAo * b.dThuc - dThuc * b.dAo) / mau;
     return kq;
