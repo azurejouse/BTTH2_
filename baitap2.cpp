@@ -84,16 +84,21 @@ PhanSo PhanSo::Tich(PhanSo b){
     kq.RutGon();
     return kq;
 }
-
 PhanSo PhanSo::Thuong(PhanSo b){
     PhanSo kq;
+    // Kiểm tra nếu phân số chia (b) bằng 0 (tức là tử số của b bằng 0)
+    if (b.iTu == 0) {
+        cout << "Loi: Khong the chia cho phan so 0!\n";
+        kq.iTu = 0; 
+        kq.iMau = 1; // Trả về 0 để tránh crash chương trình
+        return kq;
+    }
     kq.iTu = iTu * b.iMau;
     kq.iMau = iMau * b.iTu;
     kq.RutGon();
     return kq;
 }
-
-/**
+/*
  * Phương thức: SoSanh()
  * - Input: Phân số this và phân số b.
  * - Output: Trả về 1 (Lớn hơn), 0 (Bằng), -1 (Nhỏ hơn).
