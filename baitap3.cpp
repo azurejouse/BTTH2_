@@ -18,7 +18,20 @@ void SoPhuc::Nhap(){
  * - Hướng giải thuật: Xuất phần thực, kèm ký tự 'i'.
  */
 void SoPhuc::Xuat(){
-    cout << "(" << dThuc << (dAo >= 0 ? " + " : " - ") << abs(dAo) << "i)";
+    if (dThuc == 0 && dAo == 0){
+        cout << "0";
+        return;
+    }
+    if (dThuc != 0){
+        cout << dThuc;
+    }
+    if (dAo != 0) {
+        if (dAo > 0 && dThuc != 0) cout << " + ";
+        if (dAo < 0) cout << " - ";
+        
+        if (abs(dAo) != 1) cout << abs(dAo); // Tránh ghi "1i", chỉ ghi "i"
+        cout << "i";
+    }
 }
 /*
  * Phương thức: Tong, Hieu, Tich, Thuong
