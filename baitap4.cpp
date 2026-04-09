@@ -8,9 +8,15 @@ using namespace std;
  * - Hướng giải thuật: Sử dụng cin kiểm tra điều kiện (giờ 0-23, phút/giây 0-59).
  */
 void GioPhutGiay::Nhap(){
-    cout << "Nhap gio: "; cin >> iGio;
-    cout << "Nhap phut: "; cin >> iPhut;
-    cout << "Nhap giay: "; cin >> iGiay;
+    do{
+        cout << "Nhap gio (0-23): "; cin >> iGio;
+    }while (iGio < 0 || iGio > 23);
+    do{
+        cout << "Nhap phut (0-59): "; cin >> iPhut;
+    }while (iPhut < 0 || iPhut > 59);
+    do{
+        cout << "Nhap giay (0-59): "; cin >> iGiay;
+    }while (iGiay < 0 || iGiay > 59);
 }
 /*
  * Phương thức: Xuat()
