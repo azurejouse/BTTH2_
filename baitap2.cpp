@@ -22,20 +22,14 @@ void PhanSo::Nhap(){
  * - Output: Hiển thị phân số ra màn hình.
  * - Hướng giải thuật: Xuất theo dạng iTu/iMau. Xử lý trường hợp mẫu bằng 1 hoặc tử bằng 0.
  */
-void SoPhuc::Xuat(){
-    if (dThuc == 0 && dAo == 0){
+void PhanSo::Xuat() {
+    if (iTu == 0) {
         cout << "0";
-        return;
-    }
-    if (dThuc != 0){
-        cout << dThuc;
-    }
-    if (dAo != 0) {
-        if (dAo > 0 && dThuc != 0) cout << " + ";
-        if (dAo < 0) cout << " - ";
-        
-        if (abs(dAo) != 1) cout << abs(dAo); // Tránh ghi "1i", chỉ ghi "i"
-        cout << "i";
+    } else if (iMau == 1) {
+        cout << iTu;
+    } else {
+        // Luôn hiển thị dấu trừ ở tử nếu phân số âm
+        cout << iTu << "/" << iMau;
     }
 }
 /*
