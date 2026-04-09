@@ -22,12 +22,12 @@ void PhanSo::Nhap(){
  * - Output: Hiển thị phân số ra màn hình.
  * - Hướng giải thuật: Xuất theo dạng iTu/iMau. Xử lý trường hợp mẫu bằng 1 hoặc tử bằng 0.
  */
-void PhanSo::Xuat() {
-    if (iTu == 0) {
+void PhanSo::Xuat(){
+    if (iTu == 0){
         cout << "0";
-    } else if (iMau == 1) {
+    } else if (iMau == 1){
         cout << iTu;
-    } else {
+    }else{
         // Luôn hiển thị dấu trừ ở tử nếu phân số âm
         cout << iTu << "/" << iMau;
     }
